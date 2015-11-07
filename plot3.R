@@ -1,7 +1,6 @@
 File <- "household_power_consumption.txt"
 dataset <- read.table(File, header=TRUE, sep=";", dec=".")
 Data <- dataset[dataset$Date %in% c("1/2/2007","2/2/2007"),]
-str(Data)
 time <- strptime(paste(Data$Date, Data$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 ActivePower <- as.numeric(Data$Global_active_power)
 Metering1 <- as.numeric(Data$Sub_metering_1)
